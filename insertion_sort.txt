@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+    int array[]={7,23,-6,88,12,50,26,-9,0}; //a sample array
+    int n=sizeof(array)/sizeof(array[0]); //number of elements in array
+    
+    for (int h=0; h<n; h++){ //Printing elements of array before sorting
+        printf("%d ",array[h]);
+    }
+    printf("\n");
+    
+    for (int i=1; i<n;i++){ //Insertion sort
+        int temp=array[i];
+        int j=i-1;
+        while (j>=0 && array[j]>temp){
+            array[j+1]=array[j];
+            j--;
+        }
+        array[j+1]=temp;
+    }
+    
+    for (int k=0; k<n; k++){ //Printing elements of array after sorting
+        printf("%d ",array[k]);
+    }
+    return 0;
+}

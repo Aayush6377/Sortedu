@@ -1,0 +1,29 @@
+#include <stdio.h>
+int main(){
+    int array[]={7,-1,78,102,4,56,67,23,9,-3}; //a sample array
+    int n=sizeof(array)/sizeof(array[0]); //number of elements in array
+    
+    for (int h=0; h<n; h++){ //Printing elements of array before sorting
+        printf("%d ",array[h]);
+    }
+    printf("\n");
+    
+    for (int i=0; i<n-1;i++){ //Selection sort
+        int index=i;
+        for (int j=i+1; j<n; j++){
+            if (array[j]<array[index]){
+                index=j;
+            }
+        }
+        if (index!=i){
+            int temp=array[index];
+            array[index]=array[i];
+            array[i]=temp;
+        }
+    }
+    
+    for (int k=0; k<n; k++){ //Printing elements of array after sorting
+        printf("%d ",array[k]);
+    }
+    return 0;
+}
