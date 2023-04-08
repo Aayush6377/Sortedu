@@ -18,7 +18,7 @@ int printing_code(){
         else {
             FILE *f=fopen(name[sel-1],"r");
             if (f==NULL){
-                printf("File %s doesn't found",name[sel+1]);
+                printf("File %s doesn't found",name[sel-1]);
                 break;
             }
             else{
